@@ -2,7 +2,7 @@
 require 'middleman-core'
 
 # Extension namespace
-class SRI_Calculator < ::Middleman::Extension
+class SRICalculator < ::Middleman::Extension
   option :my_option, 'default', 'An example option'
 
   def initialize(app, options_hash={}, &block)
@@ -30,3 +30,5 @@ class SRI_Calculator < ::Middleman::Extension
   #   end
   # end
 end
+
+::Middleman::Extensions.register(:sri_calculator, SRICalculator)
