@@ -20,18 +20,18 @@ class SRICalculator < ::Middleman::Extension
   def after_build(builder)
   	datafilepath = File.join(builder.app.config[:data_dir], "/", options[:datafile])
   	sri_data = {}
-	if File.exists?(datafilepath)
+	if File.exist?(datafilepath)
   	  sri_data = YAML.load_file(datafilepath)
   	end
 	options.paths.each { |path|
 		relative_path = File.join(builder.app.config[:build_dir], "/", path)
-		if File.exists?(relative_path)
+		if File.exist?(relative_path)
 		    hash = compute_hash(relative_path)
 		    normalized_name = path.gsub(/[^A-Za-z0-9]/,'_')
 		    sri_data[normalized_name] = hash
 		end
 	}
-    if not File.exists?(builder.app.config[:data_dir])
+    if not File.exist?(builder.app.config[:data_dir])
        Dir.mkdir(builder.app.config[:data_dir])
     end
 	File.write(datafilepath, sri_data.to_yaml)
