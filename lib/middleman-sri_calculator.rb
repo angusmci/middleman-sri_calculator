@@ -1,6 +1,4 @@
 require "middleman-core"
 
-Middleman::Extensions.register :middleman-sri_calculator do
-  require "middleman-sri_calculator/extension"
-  SRICalculator
-end
+require "middleman-sri_calculator/extension"
+::Middleman::Extensions.register(:sri_calculator, SRICalculator)
