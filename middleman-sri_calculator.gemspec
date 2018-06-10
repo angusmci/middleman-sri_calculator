@@ -5,11 +5,11 @@ Gem::Specification.new do |s|
   s.name        = "middleman-sri_calculator"
   s.version     = "0.0.1"
   s.platform    = Gem::Platform::RUBY
-  # s.authors     = ["Your Name"]
-  # s.email       = ["email@example.com"]
-  # s.homepage    = "http://example.com"
-  # s.summary     = %q{A short summary of your extension}
-  # s.description = %q{A longer description of your extension}
+  s.authors     = ["Angus McIntyre"]
+  s.email       = ["http://nomadcode.com/contact/"]
+  s.homepage    = "http://nomadcode.com"
+  s.summary     = %q{Middleman extension to perform subresource integrity calculations}
+  s.description = %q{A Middleman extension to compute subresource integrity hashes for web resources such as JS or CSS.}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
