@@ -25,9 +25,11 @@ class SRICalculator < ::Middleman::Extension
   	end
 	options.paths.each { |path|
 		relative_path = File.join(builder.app.config[:build_dir], "/", path)
-		hash = compute_hash(relative_path)
-		normalized_name = path.gsub(/[^A-Za-z0-9]/,'_')
-		sri_data[normalized_name] = hash
+		if File.exists?(relative_path)
+		    hash = compute_hash(relative_path)
+		    normalized_name = path.gsub(/[^A-Za-z0-9]/,'_')
+		    sri_data[normalized_name] = hash
+		end
 	}
 	File.write(datafilepath, sri_data.to_yaml)
   end
