@@ -31,6 +31,9 @@ class SRICalculator < ::Middleman::Extension
 		    sri_data[normalized_name] = hash
 		end
 	}
+    if not File.exists?(builder.app.config[:data_dir])
+       Dir.mkdir(builder.app.config[:data_dir])
+    end
 	File.write(datafilepath, sri_data.to_yaml)
   end
 
