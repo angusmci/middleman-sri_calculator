@@ -11,7 +11,7 @@ Subresource Integrity hashes are used to verify that a resource such as a Javasc
 
 This extension is not yet a published Ruby gem. You can add it to your project with:
 
-	gem "middleman-sri_calculator", :git => 'https://github.com/angusmci/middleman-sri_calculator.git', :branch => 'develop'
+	gem "middleman-sri_calculator", :git => 'https://github.com/angusmci/middleman-sri_calculator.git', :branch => 'master'
 	
 ## Configuration
 
