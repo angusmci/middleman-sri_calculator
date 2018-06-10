@@ -14,10 +14,11 @@ class MyExtension < ::Middleman::Extension
 
     # set up your extension
     # puts options.my_option
+    puts('Initialized')
   end
 
   def after_configuration
-    # Do something
+    puts('After configuration')
   end
 
   # A Sitemap Manipulator
