@@ -6,8 +6,8 @@ require 'yaml'
 class SRICalculator < ::Middleman::Extension
   option :paths, [], 'List of pathnames for which we need to calculate a hash'
   option :datafile, 'sri.yaml', "Name of data file used to store SRI hashes"
-  option :template, "shasum -b -a 384 %s | xxd -r -p | base64", "Command template"
-  option :prefix, "sha384", "Identifier of hashing algorithm"
+  option :template, "shasum -b -a 256 %s | awk '{ print $1 }' | xxd -r -p | base64", "Command template"
+  option :prefix, "sha256", "Identifier of hashing algorithm"
 
   def initialize(app, options_hash={}, &block)
     super
